@@ -1,0 +1,71 @@
+Xây dựng: Website Bán hàng
+
+Hướng dẫn phân tích thiết kế database
+
+1) Bảng role
+    -id: int -> Khóa chính tự tăng
+    -name: string(varchar) -> độ dài lớn hơn yêu cầu 1 chút(độ 20 ký tự)
+2) Bảng user
+    -id: int -> Khóa chính tự tăng
+    -fullname -> string -> 50 ký tự
+    -email -> string -> 150 ký tự
+    -phone_number -> string -> 20 ký tự
+    -address -> string -> 200 ký tự
+    -password -> string -> md5 -> 32 ký tự
+    -roll_id -> int -> foreign key -> role(id)
+3) Bảng Danh Mục -> Category
+    -id: int -> primary key -> Khóa tự tăng
+    -name: string -> 100 ký tự
+4) Bảng Sản Phẩm -> product
+    -id: int -> Khóa chính tự tăng
+    -category_id: int -> foreign key -> category(id)
+    -title: string -> 350 ký tự
+    -price: int
+    -discount: int
+    -thumbnail: string -> 500
+    -description: longtext
+    -created_at: datetime -> tạo bản ghi
+    -updated_at: datetime -> sửa bản ghi
+5) Bảng quản lý galery
+    -id: int -> Khóa chính tự tăng
+    -product_id -> int -> foreign key -> product(id)
+    -thumbnail -> string -> 500 ký tự
+6) Bảng quản lý phản hồi -> feedback
+    -id: int -> Khóa chính tự tăng
+    -firstname -> string -> 30 ký tự
+    -lastname -> string -> 30 ký tự
+    -email -> string -> 150 ký tự
+    -phone_number -> string -> 20 ký tự
+    -subject_name -> string -> 200 ký tự
+    -note -> string -> độ dài tối đa là 500 ký tự
+7) Quản lý đơn hàng
+    -id: int -> Khóa chính tự tăng
+    -user_id int -> foreign user(id )
+    -fullname
+    -email
+    -phone_number
+    -address
+    -note
+    -order_date: datetime -> thời điểm đặt hàng
+    -Danh sách các sản Phẩm
+        -Sản phẩm 1 x só lượng x giá thời điểm mua
+        -Sản phẩm 2 x số lượng x giá thời điểm mua
+    7.1) Bảng Order
+        -id: int -> Khóa chính tự tăng
+        -fullname
+        -email
+        -phone_number
+        -address
+        -note
+        -order_date: datetime -> thời điểm đặt hàng
+        -status: int -> (pending, approved, ...)
+        - total_money -> int -> tổng tiền của đơn hàng
+    7.2) Bảng chi tiết đơn hàng 
+        -id: int -> tự tăng
+        -order_id -> int foreign key -> Order(id)
+        -product_id -> int -> foreign key -> product(id)
+        -price - int -> số lượng sản phẩm mua
+        -num-> id -> số lượng sản Phẩm mua
+        -total_money -> lưu tổng tiền của sản phẩm (price * num)
+Tạo database
+    -> database.sql

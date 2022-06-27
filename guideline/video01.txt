@@ -1,0 +1,21 @@
+I) Phân tích dự án:
+- Font-end:
+    Trang chủ
+    Trang danh sách sản phẩm 
+    Trang chi tiết sản phẩm
+    Trang giỏ hàng
+    Trang checkout
+    Trang thanh toán hoàn thành
+    Trang liên hệ
+- Admin:
+    Tài khoản người dùng:
+        Quản lý role(admin, user)
+        Quản lý người dùng; admin/user
+            Hiển thị danh sách/thêm/sửa/xóa
+        Đăng kí tài khoản
+        Login
+    Quản lý danh mục sản phẩm
+    Quản lý sản phầm
+    Quản lý đơn hàng
+        Hiển thị ddc danh sách đơn hàng -> giảnm dần theo  thời gian
+    Quản lý phản hồi  

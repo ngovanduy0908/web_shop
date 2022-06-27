@@ -1,0 +1,28 @@
+Hướng dẫn xây dựng bộ khung dự án
+
+-Font end
+-Admin
+-CSDL
+
+Front end:
+    -home.php(index.php)
+    -category.php
+    -detail.php
+    -cart.php
+    -checkout.php
+    -complete.php
+    -contact.php
+Admin:
+    -authen/***
+    -user/***
+    -category/***
+    -product/***
+    -order/***
+    -feedback/***
+    index.php -> ...
+database
+    -config.php -> cấu hình CSDL
+    -dbhelper.php -> các function dùng chung cho toàn dự án
+utils
+    -utility.php -> chứa các hàm tiện ích cho cả dự án
+    
